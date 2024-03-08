@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { useLiff } from "react-liff";
+import liff from "@line/liff";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,8 +9,6 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const { liff } = useLiff();
-
   const onClick = async () => {
     const result = await liff.scanCodeV2();
     console.log(result);

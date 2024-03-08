@@ -1,15 +1,15 @@
 import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
-import { LiffProvider } from "react-liff";
+import liff from "@line/liff";
 
-startTransition(() => {
-  hydrateRoot(
-    document,
-    <StrictMode>
-      <LiffProvider liffId={import.meta.env.LIFF_ID || ""}>
+liff.init({ liffId: import.meta.env.LIFF_ID || "" }).then(() => {
+  startTransition(() => {
+    hydrateRoot(
+      document,
+      <StrictMode>
         <RemixBrowser />
-      </LiffProvider>
-    </StrictMode>
-  );
+      </StrictMode>
+    );
+  });
 });
