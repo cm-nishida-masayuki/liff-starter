@@ -3,7 +3,7 @@ import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
 import liff from "@line/liff";
 
-liff.init({ liffId: import.meta.env.LIFF_ID || "" }).then(() => {
+liff.init({ liffId: "2003975408-roX79LLJ" }).then(() => {
   startTransition(() => {
     hydrateRoot(
       document,
