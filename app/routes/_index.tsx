@@ -1,10 +1,16 @@
 import type { MetaFunction } from "@remix-run/node";
+import liff from "@line/liff";
 
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix SPA" },
     { name: "description", content: "Welcome to Remix (SPA Mode)!" },
   ];
+};
+
+const onClick = async () => {
+  const result = await liff.scanCodeV2();
+  console.log(result);
 };
 
 export default function Index() {
@@ -27,6 +33,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <button onClick={onClick}>QRコード読み取り</button>
     </div>
   );
 }
