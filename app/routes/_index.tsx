@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import liff from "@line/liff";
+import { useLiff } from "react-liff";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,12 +8,14 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-const onClick = async () => {
-  const result = await liff.scanCodeV2();
-  console.log(result);
-};
-
 export default function Index() {
+  const { liff } = useLiff();
+
+  const onClick = async () => {
+    const result = await liff.scanCodeV2();
+    console.log(result);
+  };
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix (SPA Mode)</h1>
