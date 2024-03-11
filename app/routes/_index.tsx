@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import liff from "@line/liff";
+import { useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,9 +10,17 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const [geoLatitude, setGeoLatitude] = useState(0);
+
   const onClick = async () => {
     const result = await liff.scanCodeV2();
     console.log(result);
+  };
+
+  const showGeolocation = async () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setGeoLatitude(position.coords.latitude);
+    });
   };
 
   return (
@@ -33,7 +42,13 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <button onClick={onClick}>QRコード読み取り</button>
+      <div>
+        <button onClick={onClick}>QRコード読み取り</button>
+      </div>
+      <div>
+        <p>緯度: {geoLatitude}</p>
+        <button onClick={showGeolocation}>位置情報を読み取り</button>
+      </div>
     </div>
   );
 }
