@@ -22,7 +22,7 @@ module.exports = {
 
   // Base config
   extends: ["eslint:recommended"],
-
+  exclude: ["node_modules", "build", "dist", "coverage"],
   overrides: [
     // React
     {
