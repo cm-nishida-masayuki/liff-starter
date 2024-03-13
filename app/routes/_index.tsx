@@ -13,9 +13,9 @@ export default function Index() {
   const [geoLatitude, setGeoLatitude] = useState(0);
 
   const onClick = async () => {
-    const result = await liff.scanCodeV2();
     liff.login();
-    console.log(result);
+    // const result = await liff.scanCodeV2();
+    // console.log(result);
   };
 
   const showGeolocation = async () => {
