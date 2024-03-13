@@ -16,6 +16,7 @@ export default function Index() {
     if (!liff.isLoggedIn()) {
       liff.login();
     }
+
     const result = await liff.scanCodeV2();
     console.log(result);
   };
