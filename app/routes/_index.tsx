@@ -14,6 +14,7 @@ export default function Index() {
 
   const onClick = async () => {
     const result = await liff.scanCodeV2();
+    liff.login();
     console.log(result);
   };
 
