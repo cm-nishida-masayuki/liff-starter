@@ -14,8 +14,8 @@ export default function Index() {
 
   const onClick = async () => {
     liff.login();
-    // const result = await liff.scanCodeV2();
-    // console.log(result);
+    const result = await liff.scanCodeV2();
+    console.log(result);
   };
 
   const showGeolocation = async () => {
