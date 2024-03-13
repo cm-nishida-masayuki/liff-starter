@@ -13,7 +13,9 @@ export default function Index() {
   const [geoLatitude, setGeoLatitude] = useState(0);
 
   const onClick = async () => {
-    liff.login();
+    if (!liff.isLoggedIn()) {
+      liff.login();
+    }
     const result = await liff.scanCodeV2();
     console.log(result);
   };
