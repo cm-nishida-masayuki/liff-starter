@@ -6,18 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-const initWeglot = () => {
-  /* @ts-ignore */
-  Weglot.initialize({ api_key: "wg_f288cd21cd31d84fe6698af0cc15d0810" });
-};
-
 export function Layout({ children }: { children: React.ReactNode }) {
-  const initWeglot = () => {
-    /* @ts-ignore */
-    Weglot.initialize({ api_key: "wg_f288cd21cd31d84fe6698af0cc15d0810" });
-    return null;
-  };
-
   return (
     <html lang="ja">
       <head>
@@ -28,7 +17,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           type="text/javascript"
           src="https://cdn.weglot.com/weglot.min.js"
         ></script>
-        <script>{initWeglot()}</script>
         <Meta />
         <Links />
       </head>
