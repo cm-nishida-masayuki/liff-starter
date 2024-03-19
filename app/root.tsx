@@ -13,12 +13,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="/manifest.json" />
+        <Meta />
+        <Links />
         <script
           type="text/javascript"
           src="https://cdn.weglot.com/weglot.min.js"
         ></script>
-        <Meta />
-        <Links />
       </head>
       <body>
         {children}
