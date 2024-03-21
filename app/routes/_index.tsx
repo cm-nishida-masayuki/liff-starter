@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import liff from "@line/liff";
 import { useState } from "react";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -29,21 +30,10 @@ export default function Index() {
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix (SPA Mode)</h1>
+      <h1>Example Line Mini App</h1>
       <ul>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/future/spa-mode"
-            rel="noreferrer"
-          >
-            SPA Mode Guide
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
+          <Link to="/about">このサイトについて</Link>
         </li>
       </ul>
       <div>
